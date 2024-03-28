@@ -12,11 +12,21 @@
 詳細 : [LINE Notify](https://notify-bot.line.me/)
 
 # インストール
-WebUI の `Extensions` > `Install from URL` からインストール可能
+WebUI の `Extensions` > `Install from URL` からインストール
 
 ``` bash
 https://github.com/yazawakenichi/sd-send-to-line
 ```
+
+または
+
+`Stable-Diffusion-WebUI` > `extensions` で `git clone`
+
+``` bash
+git clone git@github.com:yazawakenichi/sd-send-toline
+```
+
+WebUI が使える環境なら依存関係はすでに整っていると思うが、ちゃんとこれから `install.py` を作るつもり
 
 # 使い方
 `txt2img` とか `img2img` のタブの `ControlNet` とかのタブと一緒に並ぶ
