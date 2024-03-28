@@ -1,1 +1,23 @@
 # sd-send-to-line
+
+# 概要
+画像の生成が終了したら [LINE Notify API](https://notify-bot.line.me/) を通じて LINE で生成画像とそのパラメータを送信してくれる拡張機能
+
+使用するには LINE Notify のアクセストークンが必要
+
+詳細 : [LINE Notify](https://notify-bot.line.me/)
+
+# インストール
+WebUI の `Extensions` > `Install from URL` からインストール可能
+
+``` bash
+https://github.com/yazawakenichi/sd-send-to-line
+```
+
+# 使い方
+`txt2img` とか `img2img` のタブの `ControlNet` とかのタブと一緒に並ぶ
+
+LINE Notify から取得したトークンを `LINE Notify token` に入力
+
+あとはいつも通り画像を Generate すると生成終了時に LINE Notify から画像が届く
+
