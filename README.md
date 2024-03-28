@@ -1,5 +1,9 @@
 # sd-send-to-line
 
+[![YouTube Video](https://i.ytimg.com/vi/mTh_4K-HJZI/maxresdefault.jpg)](https://youtu.be/mTh_4K-HJZI)
+
+<sup>生成された画像のせいでイケナイ動画みたいに見える...</sup>
+
 # 概要
 画像の生成が終了したら [LINE Notify API](https://notify-bot.line.me/) を通じて LINE で生成画像とそのパラメータを送信してくれる拡張機能
 
