@@ -10,9 +10,9 @@ class LINENotify:
     def __init__(self, token):
         self.__headers = {"Authorization" : f"Bearer {token}"}
 
-    def send(self, message : str, image : Image = None):
+    def send(self, message : str, image : Image = None, notificationDisabled = False):
         LINE_API_URL = "https://notify-api.line.me/api/notify"
-        payload = {"message" : message}
+        payload = {"message" : message, "notificationDisabled" : notificationDisabled}
         files = {}
         if not image is None:
             _io = self.img2io(image)
@@ -37,14 +37,17 @@ class SendLineScript(scripts.Script):
         with ui_components.InputAccordion(False, label = f"{self.title()}") as enable:
             with gr.Row():
                 token = gr.Textbox(label = "LINE Notify token", placeholder = "*" * 43)
-        return [enable, token]
+            with gr.Row():
+                notificationDisabled = gr.Checkbox(False, label = "Notification Disable")
+        return [enable, token, notificationDisabled]
 
     ### AlwaysVisible スクリプトの終了後に呼び出される
     def postprocess(self, p : StableDiffusionProcessing, processed : Processed, *args):
         self.enable = args[0]
-        if self.enable:
-            line = LINENotify(args[1])
-            message = "\r\n" + processed.infotexts[0]
-            line.send(message, processed.images[0])
+        if not self.enable:
             return
+        line = LINENotify(args[1])
+        notificationDisabled = args[2]
+        message = "\r\n" + processed.infotexts[0]
+        line.send(message, processed.images[0], notificationDisabled)
 
