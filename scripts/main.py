@@ -16,7 +16,7 @@ class SendLineScript(scripts.Script):
         with ui_components.InputAccordion(False, label = f"{self.title()}") as enable:
             with gr.Row():
                 _tmp = getattr(cmd_opts, "LINE_Notify_Token", "")
-                token = gr.Textbox(_tmp, label = "LINE Notify token", placeholder = "*" * 43)
+                token = gr.Textbox(_tmp, label = "LINE Notify token", placeholder = "*" * 43, default = cmd_opts.LINE_Notify_Token)
             with gr.Row():
                 notificationDisabled = gr.Checkbox(False, label = "Notification Disable")
         return [enable, token, notificationDisabled]
