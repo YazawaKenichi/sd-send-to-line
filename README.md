@@ -11,6 +11,10 @@
 
 詳細 : [LINE Notify](https://notify-bot.line.me/)
 
+> [!CAUTION]
+> LINE Notify API のサービス終了に伴ってこの拡張機能は正常に動作しません。
+> 代替 API を用いて当リポジトリで継続して開発をことを検討しておりますが、目途は立っておりません。
+
 # インストール
 WebUI の `Extensions` > `Install from URL` からインストール
 
